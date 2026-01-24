@@ -1,11 +1,11 @@
 # ajeitando o readme ainda blz 🤙
 
-- rodar frontend
+| rodar frontend
 cd amiceimports/frontend
 npm install
 npm run dev
 
-- rodar backend
+| rodar backend
 cd amiceimports/backend
 python -m venv env
 env\Scripts\activate
