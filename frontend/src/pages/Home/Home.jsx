@@ -1,9 +1,10 @@
 import "./Home.css";
+import Hero from "../../components/Hero/Hero";
 
 function Home() {
   return (
     <div className="home">
-      <h1>oi</h1>
+      <Hero />
     </div>
   );
 }
