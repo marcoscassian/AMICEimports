@@ -10,13 +10,13 @@ function Header() {
         </div>
 
         <div className="center">
-            <a href="">Início</a>
+            <a href="/">Início</a>
             <a href="">Sobre</a>
-            <a href="">Produtos</a>
+            <a href="/products">Produtos</a>
         </div>
 
         <div className="right">
-            <a href="">Cadastrar Produto</a>
+            <a href="/productsform">Cadastrar Produto</a>
         </div>
     </div>
   );

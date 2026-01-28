@@ -1,29 +1,19 @@
 import "./Hero.css";
 
-function Hero() {
+function Hero({ title, subtitle, image, buttonText, titleimg }) {
   return (
-    <div className="hero">
+    <section className="hero">
         <div className="left">
-
-            <div className="title">
-                <h1>O Melhor da tecnologia em um só canto.</h1>
-            </div>
-
-            <div className="desc">
-                <p>Explore uma seleção de produtos importados que trazem qualidade, inovação e estilo ao seu dia a dia.</p>
-            </div>
-
-            <div className="button">
-                <button>Ver Produtos</button>
-            </div>
-
+            <h1>{title}</h1>
+            <p>{subtitle}</p>
+            {buttonText && <button>{buttonText}</button>}
         </div>
+
         <div className="right">
-            <div className="image">
-                <img src="" alt="Iphone" />
-            </div>
+
+            <img src={image} alt={titleimg} />
         </div>
-    </div>
+     </section>
   );
 }
 
