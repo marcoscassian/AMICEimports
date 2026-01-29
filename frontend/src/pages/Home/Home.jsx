@@ -7,7 +7,8 @@ function Home() {
       <Hero 
       title="O melhor da Tecnologia em um só canto."
       subtitle="Explore uma seleção de produtos importados que trazem qualidade, inovação e estilo ao seu dia a dia"
-      buttonText="Ver projetos"
+      buttonText="Explorar produtos"
+      buttonLink="/products"
       image="/images/hero/hero-home.png"/>
 
       <div className="benefits-section">
