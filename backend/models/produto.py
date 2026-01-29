@@ -10,3 +10,14 @@ class Produto(db.Model):
     estoque = db.Column(db.Integer, nullable=False)
     preco = db.Column(db.Float, nullable=False)
     imagem_url = db.Column(db.String(255), nullable=True)
+
+    def to_dict(self):
+            return {
+                "id": self.id,
+                "titulo": self.titulo,
+                "tipo": self.tipo,
+                "status": self.status,
+                "estoque": self.estoque,
+                "preco": self.preco,
+                "imagem_url": self.imagem_url
+            }
