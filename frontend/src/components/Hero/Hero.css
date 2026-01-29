@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -5,5 +7,70 @@
 }
 
 .hero {
-    background-color: #1E1E1E;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1c1c1c; 
+  padding: 10px 5%; 
+  min-height: 150px;
+  font-family: 'Inter', sans-serif; 
+  overflow: hidden; 
+}
+
+.left {
+  flex: 1; 
+  padding-right: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; 
+}
+
+.left h1 {
+  color: #ff6600; 
+  font-size: 35px;
+  line-height: 1.1;
+  font-weight: 800;
+  margin: 0;
+}
+
+.left p {
+    max-width: 90%;
+  color: #e0e0e0; 
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.left button {
+  background-color: transparent;
+  border: 2px solid #ff6600; 
+  color: #ff6600;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 50px; 
+  cursor: pointer;
+  width: fit-content;
+  transition: all 0.3s ease;
+}
+
+.left button:hover {
+  background-color: #ff6600;
+  color: #fff;
+}
+
+.right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end; 
+  align-items: center;
+}
+
+.right img {
+  max-width: 100%;
+  height: auto;
+  max-height: 450px; 
+  object-fit: contain;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5)); 
+  margin-right: -50px;
 }
