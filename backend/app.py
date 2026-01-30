@@ -1,12 +1,11 @@
 from flask import Flask, jsonify
 from flask_cors import CORS
-<<<<<<< HEAD
 from backend.extensions import db
 from backend.controllers.produtos import produtos_bp
 from sqlalchemy.sql.expression import func
 from backend.models.produto import Produto 
-=======
->>>>>>> 3f3fb75ac99d6d1d373e1949572019183196be57
+
+
 
 # Support running this module either as a package from the project root
 # (python -m backend.app) or as a script from the backend/ folder (python app.py).
