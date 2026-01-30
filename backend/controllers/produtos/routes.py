@@ -1,10 +1,10 @@
 from flask import request, jsonify
 from backend.extensions import db
-from backend.models import Produto
+from backend.models.produto import Produto
 from . import produtos_bp
 
 
-@produtos_bp.route('/', methods=['POST'])
+@produtos_bp.route('', methods=['POST'])
 def criar_produto():
     data = request.json
 
