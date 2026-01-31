@@ -1,5 +1,8 @@
-.benefits-section {
+body {
   background-color: #E9ECEF;
+}
+
+.benefits-section {
   display: flex;
   justify-content: center; 
   gap: 20px; 
@@ -10,9 +13,9 @@
 
 .benefit-card {
   background-color: #111; 
-  color: #fff;            
-  width: 220px;           
-  height: 120px;          
+  color: #fff;
+  width: 260px;           
+  height: 160px;          
   border-radius: 12px;    
   display: flex;
   align-items: center;    
@@ -21,7 +24,7 @@
   font-family: sans-serif;
   font-weight: 800;      
   font-style: italic;     
-  font-size: 1.3rem;      
+  font-size: 1.8rem;      
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   transition: transform 0.2s; 
 }

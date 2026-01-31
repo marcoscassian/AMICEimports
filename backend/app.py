@@ -1,9 +1,13 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from flask_cors import CORS
 from backend.extensions import db
 from backend.controllers.produtos import produtos_bp
 from sqlalchemy.sql.expression import func
-from backend.models.produto import Produto 
+from backend.models.produto import Produto
+import os
+import uuid
+from werkzeug.utils import secure_filename
+
 
 
 
@@ -43,6 +47,24 @@ with app.app_context():
 def get_home_products():
     produtos = Produto.query.order_by(func.random()).limit(4).all()
     return jsonify([p.to_dict() for p in produtos])
+
+
+@app.route('/api/upload-image', methods=['POST'])
+def upload_image():
+    if 'image' not in request.files:
+        return jsonify({'error': 'No file part'}), 400
+    file = request.files['image']
+    if file.filename == '':
+        return jsonify({'error': 'No selected file'}), 400
+    filename = secure_filename(file.filename)
+    ext = os.path.splitext(filename)[1]
+    new_name = f"{uuid.uuid4().hex}{ext}"
+    images_dir = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'frontend', 'public', 'images'))
+    os.makedirs(images_dir, exist_ok=True)
+    save_path = os.path.join(images_dir, new_name)
+    file.save(save_path)
+    url = f"/images/{new_name}"
+    return jsonify({'url': url}), 201
 
 if __name__ == '__main__':
     app.run(debug=True)
