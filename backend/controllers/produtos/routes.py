@@ -4,6 +4,12 @@ from backend.models.produto import Produto
 from . import produtos_bp
 
 
+@produtos_bp.route('', methods=['GET'])
+def listar_produtos():
+    produtos = Produto.query.all()
+    return jsonify([p.to_dict() for p in produtos])
+
+
 @produtos_bp.route('', methods=['POST'])
 def criar_produto():
     data = request.json
