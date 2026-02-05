@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Hero from "../../components/Hero/Hero";
-import "../../components/ProductCard/ProductCard.css"; // Garante o estilo dos cards
+import "../../components/ProductCard/ProductCard.css";
 import "./Home.css";
 
 function Home() {
@@ -15,8 +15,6 @@ function Home() {
       .catch((err) => console.error("Erro ao buscar produtos:", err));
   }, []);
 
-  // --- Lógica das Ações (Editar, Apagar, Utilizar) ---
-
   const handleEdit = (id) => {
     navigate(`/productsform/${id}`);
   };
@@ -28,7 +26,6 @@ function Home() {
       })
       .then((res) => {
         if (res.ok) {
-           // Atualiza lista localmente para não perder a ordem aleatória
            setProdutos(prev => prev.filter(p => (p.id || p._id) !== id));
         } else {
           alert("Erro ao deletar produto");
@@ -71,7 +68,7 @@ function Home() {
     return { label: "Em estoque", class: "status-estoque" };
   };
 
-  // -------------------------------------------------------
+  
 
   return (
     <div className="home-page">
@@ -144,7 +141,7 @@ function Home() {
         </div>
       </div>
 
-      {/* SEÇÃO DE BENEFÍCIOS RESTAURADA */}
+      {}
       <div className="benefits-section">
         <div className="benefit-card"><p>Até 24x<br />sem juros</p></div>
         <div className="benefit-card"><p>Rewards</p></div>
@@ -152,7 +149,7 @@ function Home() {
         <div className="benefit-card"><p>Produtos<br />exclusivos</p></div>
       </div>
 
-      {/* RODAPÉ RESTAURADO */}
+      {}
       <footer className="footer">
         <p>
           Copyright© 1995-2026 MICEAimports. Todos os direitos reservados...<br />
