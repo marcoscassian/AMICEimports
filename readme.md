@@ -1,40 +1,39 @@
-# 🎯 AMICEimports
+🎯 AMICEimports
 
-Uma aplicação **full-stack moderna** para gerenciamento e importação de produtos.  
-O projeto combina um **frontend responsivo em React** com um **backend robusto em Flask**, focando em organização, escalabilidade e boas práticas de desenvolvimento web.
+Uma aplicação full-stack moderna para gerenciamento e importação de produtos.
+O projeto combina um frontend responsivo em React com um backend robusto em Flask, focando em organização, escalabilidade e boas práticas de desenvolvimento web.
 
----
+⸻
 
-## 📋 Tecnologias Utilizadas
+📋 Tecnologias Utilizadas
 
-### 🖥️ Frontend
-- **React 19** — Biblioteca para construção de interfaces
-- **Vite** — Build tool rápido e moderno
-- **React Router DOM** — Roteamento no lado do cliente
-- **CSS3** — Estilização nativa e responsiva
+🖥️ Frontend
+	•	React 19 — Biblioteca para construção de interfaces
+	•	Vite — Build tool rápido e moderno
+	•	React Router DOM — Roteamento no lado do cliente
+	•	CSS3 — Estilização nativa e responsiva
 
-### ⚙️ Backend
-- **Flask 3.1** — Framework web em Python
-- **Flask-CORS** — Suporte a requisições cross-origin
-- **SQLAlchemy 2.0** — ORM para banco de dados
-- **Flask-SQLAlchemy** — Integração Flask + SQLAlchemy
-- **SQLite** — Banco de dados padrão do projeto
+⚙️ Backend
+	•	Flask 3.1 — Framework web em Python
+	•	Flask-CORS — Suporte a requisições cross-origin
+	•	SQLAlchemy 2.0 — ORM para banco de dados
+	•	Flask-SQLAlchemy — Integração Flask + SQLAlchemy
+	•	SQLite — Banco de dados padrão do projeto
 
----
+⸻
 
-## 🚀 Quick Start
+🚀 Quick Start
 
-### ✅ Pré-requisitos
-- **Python 3.10+** (com `venv`)
-- **Node.js 18+**
-- **npm**
-- **Git** (opcional)
+✅ Pré-requisitos
+	•	Python 3.10+ (com venv)
+	•	Node.js 18+
+	•	npm
+	•	Git (opcional)
 
----
+⸻
 
-### 1️⃣ Clonar ou Abrir o Projeto
+1️⃣ Clonar ou Abrir o Projeto
 
-```bash
 cd AMICEimports
 
 
@@ -167,6 +166,8 @@ Frontend (.env)
 
 VITE_API_URL=http://localhost:5000
 
+Uso no código:
+
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
 
@@ -210,4 +211,3 @@ Projeto de uso educacional.
 
 AMICEimports — Sistema de gerenciamento de produtos
 📅 Última atualização: Janeiro de 2026
-
