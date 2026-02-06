@@ -1,46 +1,48 @@
-🎯 AMICEimports
+# 🎯 AMICEimports
 
-Uma aplicação full-stack moderna para gerenciamento e importação de produtos.
-O projeto combina um frontend responsivo em React com um backend robusto em Flask, focando em organização, escalabilidade e boas práticas de desenvolvimento web.
+Uma aplicação **full-stack moderna** para gerenciamento e importação de produtos.  
+O projeto combina um **frontend responsivo em React** com um **backend robusto em Flask**, focando em organização, escalabilidade e boas práticas de desenvolvimento web.
 
-⸻
+---
 
-📋 Tecnologias Utilizadas
+## 📋 Tecnologias Utilizadas
 
-🖥️ Frontend
-	•	React 19 — Biblioteca para construção de interfaces
-	•	Vite — Build tool rápido e moderno
-	•	React Router DOM — Roteamento no lado do cliente
-	•	CSS3 — Estilização nativa e responsiva
+### 🖥️ Frontend
+- **React 19** — Biblioteca para construção de interfaces
+- **Vite** — Build tool rápido e moderno
+- **React Router DOM** — Roteamento no lado do cliente
+- **CSS3** — Estilização nativa e responsiva
 
-⚙️ Backend
-	•	Flask 3.1 — Framework web em Python
-	•	Flask-CORS — Suporte a requisições cross-origin
-	•	SQLAlchemy 2.0 — ORM para banco de dados
-	•	Flask-SQLAlchemy — Integração Flask + SQLAlchemy
-	•	SQLite — Banco de dados padrão do projeto
+### ⚙️ Backend
+- **Flask 3.1** — Framework web em Python
+- **Flask-CORS** — Suporte a requisições cross-origin
+- **SQLAlchemy 2.0** — ORM para banco de dados
+- **Flask-SQLAlchemy** — Integração Flask + SQLAlchemy
+- **SQLite** — Banco de dados padrão do projeto
 
-⸻
+---
 
-🚀 Quick Start
+## 🚀 Quick Start
 
-✅ Pré-requisitos
-	•	Python 3.10+ (com venv)
-	•	Node.js 18+
-	•	npm
-	•	Git (opcional)
+### ✅ Pré-requisitos
+- **Python 3.10+** (com `venv`)
+- **Node.js 18+**
+- **npm**
+- **Git** (opcional)
 
-⸻
+---
 
-1️⃣ Clonar ou Abrir o Projeto
+### 1️⃣ Clonar ou Abrir o Projeto
 
+```bash
 cd AMICEimports
+```
 
+---
 
-⸻
+### 2️⃣ Configurar o Backend
 
-2️⃣ Configurar o Backend
-
+```bash
 cd backend
 
 # Windows
@@ -52,25 +54,29 @@ source env/bin/activate
 pip install -r requirements.txt
 cd ..
 python -m backend.app
+```
 
-📡 Backend disponível em:
-http://localhost:5000
+📡 Backend disponível em:  
+**http://localhost:5000**
 
-⸻
+---
 
-3️⃣ Configurar o Frontend
+### 3️⃣ Configurar o Frontend
 
+```bash
 cd frontend
 npm install
 npm run dev
+```
 
-🌐 Frontend disponível em:
-http://localhost:5173
+🌐 Frontend disponível em:  
+**http://localhost:5173**
 
-⸻
+---
 
-📁 Estrutura do Projeto
+## 📁 Estrutura do Projeto
 
+```text
 AMICEimports/
 ├── backend/
 │   ├── app.py
@@ -96,16 +102,17 @@ AMICEimports/
 │   └── vite.config.js
 │
 └── README.md
+```
 
+---
 
-⸻
+## 🔌 API Endpoints
 
-🔌 API Endpoints
-
-GET /api/produtos/home
+### GET `/api/produtos/home`
 
 Retorna 4 produtos aleatórios para a home.
 
+```json
 [
   {
     "id": 1,
@@ -117,14 +124,15 @@ Retorna 4 produtos aleatórios para a home.
     "imagem_url": "https://..."
   }
 ]
+```
 
+---
 
-⸻
-
-POST /api/produtos
+### POST `/api/produtos`
 
 Cria um novo produto.
 
+```json
 {
   "titulo": "Novo Produto",
   "tipo": "Categoria",
@@ -133,81 +141,85 @@ Cria um novo produto.
   "preco": 99.99,
   "imagem_url": "https://..."
 }
+```
 
+---
 
-⸻
+## 🛠️ Desenvolvimento
 
-🛠️ Desenvolvimento
-
-Testes do Backend
-
+### Testes do Backend
+```bash
 python backend/test_client.py
+```
 
-Build do Frontend
-
+### Build do Frontend
+```bash
 cd frontend
 npm run build
+```
 
-Lint
-
+### Lint
+```bash
 npm run lint
+```
 
+---
 
-⸻
+## ⚙️ Configurações
 
-⚙️ Configurações
+### Backend
+Edite `backend/config.py`.  
+O projeto utiliza **SQLite** por padrão.
 
-Backend
-
-Edite backend/config.py.
-O projeto utiliza SQLite por padrão.
-
-Frontend (.env)
-
+### Frontend (.env)
+```env
 VITE_API_URL=http://localhost:5000
+```
 
 Uso no código:
-
+```javascript
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+```
 
+---
 
-⸻
+## 🐛 Troubleshooting
 
-🐛 Troubleshooting
-
-Backend não inicia
-
+### Backend não inicia
+```bash
 python -m backend.app
+```
 
-Porta 5000 em uso
+### Porta 5000 em uso
 
-Windows
-
+**Windows**
+```bash
 netstat -ano | findstr :5000
 taskkill /PID <PID> /F
+```
 
-Linux / Mac
-
+**Linux / Mac**
+```bash
 lsof -i :5000
 kill -9 <PID>
+```
 
+---
 
-⸻
+## 📝 Licença
+Projeto de uso **educacional**.
 
-📝 Licença
+---
 
-Projeto de uso educacional.
+## 👥 Autores
 
-⸻
+- **Alex**
+- **Marcos**
+- **Ingrid**
+- **Carla**
+- **Emmily**
 
-👥 Autores
-	•	Alex
-	•	Marcos
-	•	Ingrid
-	•	Carla
-	•	Emmily
+---
 
-⸻
-
-AMICEimports — Sistema de gerenciamento de produtos
+**AMICEimports** — Sistema de gerenciamento de produtos  
 📅 Última atualização: Janeiro de 2026
