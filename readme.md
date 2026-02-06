@@ -1,128 +1,112 @@
-# 🎯 MICE Imports
+# 🎯 AMICEimports
 
-Uma aplicação full-stack moderna para gerenciamento e importação de produtos. O projeto combina um **frontend responsivo em React** com um **backend robusto em Flask**.
+Uma aplicação **full-stack moderna** para gerenciamento e importação de produtos.  
+O projeto combina um **frontend responsivo em React** com um **backend robusto em Flask**, focando em organização, escalabilidade e boas práticas de desenvolvimento web.
 
 ---
 
-## 📋 Tecnologias
+## 📋 Tecnologias Utilizadas
 
-### Frontend
-- **React 19** - UI library
-- **Vite** - Build tool rápido e moderno
-- **React Router DOM** - Roteamento cliente
-- **CSS3** - Styling nativo
+### 🖥️ Frontend
+- **React 19** — Biblioteca para construção de interfaces
+- **Vite** — Build tool rápido e moderno
+- **React Router DOM** — Roteamento no lado do cliente
+- **CSS3** — Estilização nativa e responsiva
 
-### Backend
-- **Flask 3.1** - Web framework Python
-- **Flask-CORS** - Suporte a requisições cross-origin
-- **SQLAlchemy 2.0** - ORM para banco de dados
-- **Flask-SQLAlchemy** - Integração Flask + SQLAlchemy
+### ⚙️ Backend
+- **Flask 3.1** — Framework web em Python
+- **Flask-CORS** — Suporte a requisições cross-origin
+- **SQLAlchemy 2.0** — ORM para banco de dados
+- **Flask-SQLAlchemy** — Integração Flask + SQLAlchemy
+- **SQLite** — Banco de dados padrão do projeto
 
 ---
 
 ## 🚀 Quick Start
 
-### Pré-requisitos
-- **Python 3.10+** (com venv)
-- **Node.js 18+** (com npm)
+### ✅ Pré-requisitos
+- **Python 3.10+** (com `venv`)
+- **Node.js 18+**
+- **npm**
 - **Git** (opcional)
-
-### 1️⃣ Clonar/Abrir Projeto
-
-```bash
-cd MICEAimports
-```
-
-### 2️⃣ Configurar Backend
-
-```bash
-# Entrar na pasta backend
-cd backend
-
-# Ativar virtualenv (Windows)
-env\Scripts\activate.bat
-
-# Ativar virtualenv (Linux/Mac)
-source env/bin/activate
-
-# Instalar dependências
-pip install -r requirements.txt
-
-# Voltar à raiz do projeto
-cd ..
-
-# Rodar o servidor (recomendado - a partir da raiz)
-python -m backend.app
-```
-
-O backend estará disponível em **`http://localhost:5000`**
-
-### 3️⃣ Configurar Frontend
-
-```bash
-# Em outro terminal, entrar na pasta frontend
-cd frontend
-
-# Instalar dependências
-npm install
-
-# Rodar servidor de desenvolvimento
-npm run dev
-```
-
-O frontend estará disponível em **`http://localhost:5173`** (ou outra porta indicada pelo Vite)
 
 ---
 
-## 📁 Estrutura do Projeto
+### 1️⃣ Clonar ou Abrir o Projeto
 
-```
-MICEAimports/
+```bash
+cd AMICEimports
+
+
+⸻
+
+2️⃣ Configurar o Backend
+
+cd backend
+
+# Windows
+env\Scripts\activate.bat
+
+# Linux/Mac
+source env/bin/activate
+
+pip install -r requirements.txt
+cd ..
+python -m backend.app
+
+📡 Backend disponível em:
+http://localhost:5000
+
+⸻
+
+3️⃣ Configurar o Frontend
+
+cd frontend
+npm install
+npm run dev
+
+🌐 Frontend disponível em:
+http://localhost:5173
+
+⸻
+
+📁 Estrutura do Projeto
+
+AMICEimports/
 ├── backend/
-│   ├── app.py                 # Aplicação Flask principal
-│   ├── config.py              # Configurações do app
-│   ├── extensions.py          # Extensões (db, cors)
-│   ├── requirements.txt        # Dependências Python
+│   ├── app.py
+│   ├── config.py
+│   ├── extensions.py
+│   ├── requirements.txt
 │   ├── controllers/
 │   │   └── produtos/
-│   │       ├── __init__.py
-│   │       └── routes.py      # Rotas para produtos
+│   │       └── routes.py
 │   ├── models/
-│   │   ├── __init__.py
-│   │   └── produto.py         # Modelo de Produto
-│   ├── instance/               # Dados da aplicação (SQLite, etc)
-│   └── env/                    # Virtual environment
+│   │   └── produto.py
+│   ├── instance/
+│   └── env/
 │
 ├── frontend/
 │   ├── src/
-│   │   ├── App.jsx            # Componente raiz
-│   │   ├── main.jsx           # Entry point
+│   │   ├── App.jsx
+│   │   ├── main.jsx
 │   │   ├── pages/
-│   │   │   ├── Home/
-│   │   │   ├── Products/
-│   │   │   └── ProductsForm/
 │   │   └── components/
-│   │       ├── Header/
-│   │       ├── Hero/
-│   │       └── ProductCard/
-│   ├── public/                # Arquivos estáticos
+│   ├── public/
 │   ├── index.html
-│   ├── package.json
-│   ├── vite.config.js
-│   └── eslint.config.js
+│   └── vite.config.js
 │
-└── README.md                  # Este arquivo
-```
+└── README.md
 
----
 
-## 🔌 API Endpoints
+⸻
 
-### GET `/api/produtos/home`
-Retorna 4 produtos aleatórios para exibição na home.
+🔌 API Endpoints
 
-**Response (200):**
-```json
+GET /api/produtos/home
+
+Retorna 4 produtos aleatórios para a home.
+
 [
   {
     "id": 1,
@@ -134,13 +118,14 @@ Retorna 4 produtos aleatórios para exibição na home.
     "imagem_url": "https://..."
   }
 ]
-```
 
-### POST `/api/produtos`
-Cria um novo produto no banco de dados.
 
-**Request Body:**
-```json
+⸻
+
+POST /api/produtos
+
+Cria um novo produto.
+
 {
   "titulo": "Novo Produto",
   "tipo": "Categoria",
@@ -149,107 +134,80 @@ Cria um novo produto no banco de dados.
   "preco": 99.99,
   "imagem_url": "https://..."
 }
-```
 
-**Response (201):**
-```json
-{
-  "message": "Produto cadastrado com sucesso"
-}
-```
 
----
+⸻
 
-## 🛠️ Desenvolvimento
+🛠️ Desenvolvimento
 
-### Rodar Testes (Backend)
+Testes do Backend
 
-```bash
-# A partir da raiz do projeto
 python backend/test_client.py
-```
 
-### Build Frontend para Produção
+Build do Frontend
 
-```bash
 cd frontend
 npm run build
-```
 
-### Lint Frontend
+Lint
 
-```bash
-cd frontend
 npm run lint
-```
 
----
 
-## ⚙️ Configuração
+⸻
 
-### Backend (`backend/config.py`)
+⚙️ Configurações
 
-Edite as variáveis de ambiente e banco de dados conforme necessário. Por padrão usa **SQLite**.
+Backend
 
-### Frontend (`.env`)
+Edite backend/config.py.
+O projeto utiliza SQLite por padrão.
 
-Se precisar alterar a URL base da API, crie um `.env` na pasta `frontend`:
+Frontend (.env)
 
-```
 VITE_API_URL=http://localhost:5000
-```
 
-E use em seus componentes:
-```javascript
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
-```
 
----
 
-## 🐛 Troubleshooting
+⸻
 
-### Backend não inicia
+🐛 Troubleshooting
 
-**Erro:** `ModuleNotFoundError: No module named 'backend'`
+Backend não inicia
 
-**Solução:** Execute sempre a partir da raiz do projeto:
-```bash
 python -m backend.app
-```
 
-### Frontend não conecta ao backend
+Porta 5000 em uso
 
-**Erro:** `CORS error` ou conexão recusada
+Windows
 
-**Solução:** Certifique-se de que:
-1. Backend está rodando em `http://localhost:5000`
-2. Seu `fetch()` aponta para a URL correta
-3. CORS está ativado (já está em `backend/app.py`)
-
-### Porta 5000 já está em uso
-
-```bash
-# Windows - liberar porta
 netstat -ano | findstr :5000
 taskkill /PID <PID> /F
 
-# Linux/Mac
+Linux / Mac
+
 lsof -i :5000
 kill -9 <PID>
-```
 
----
 
-## 📝 Licença
+⸻
 
-Este projeto é de uso pessoal/educacional.
+📝 Licença
 
----
+Projeto de uso educacional.
 
-## 👥 Autor
+⸻
 
-**AMICE Imports** - Projeto de gerenciamento de produtos | 2026
+👥 Autores
+	•	Alex
+	•	Marcos
+	•	Ingrid
+	•	Carla
+	•	Emmily
 
----
+⸻
 
-**Última atualização:** Janeiro 2026
+AMICEimports — Sistema de gerenciamento de produtos
+📅 Última atualização: Janeiro de 2026
+
